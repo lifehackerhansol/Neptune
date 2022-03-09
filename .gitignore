@@ -1,0 +1,8 @@
+*.json
+._*
+.DS_Store
+__pycache__
+*.xml
+*.db
+*.db-shm
+*.db-wal
