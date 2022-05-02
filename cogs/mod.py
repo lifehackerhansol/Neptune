@@ -267,5 +267,5 @@ class Mod(commands.Cog):
         await ctx.send(f"{member.mention} can now speak again.")
 
 
-def setup(bot):
-    bot.add_cog(Mod(bot))
+async def setup(bot):
+    await bot.add_cog(Mod(bot))

@@ -70,5 +70,5 @@ class Load(commands.Cog):
             await ctx.send(f'💢 Failed!\n```\n{type(e).__name__}: {e}\n```')
 
 
-def setup(bot):
-    bot.add_cog(Load(bot))
+async def setup(bot):
+    await bot.add_cog(Load(bot))

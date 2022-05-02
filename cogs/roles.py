@@ -67,5 +67,5 @@ class Roles(commands.Cog):
         await self.managerole(ctx, "Events")
 
 
-def setup(bot):
-    bot.add_cog(Roles(bot))
+async def setup(bot):
+    await bot.add_cog(Roles(bot))

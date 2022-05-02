@@ -183,5 +183,5 @@ class Config(commands.Cog):
         await ctx.send("Role does not exist. Please try again.")
 
 
-def setup(bot):
-    bot.add_cog(Config(bot))
+async def setup(bot):
+    await bot.add_cog(Config(bot))

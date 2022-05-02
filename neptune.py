@@ -55,20 +55,20 @@ class Neptune(commands.Bot):
         )
         self.session = aiohttp.ClientSession()
 
-    def load_cogs(self):
+    async def load_cogs(self):
         cog = ""
         for filename in os.listdir("./cogs"):
             try:
                 if filename.endswith(".py"):
                     cog = f"cogs.{filename[:-3]}"
-                    self.load_extension(cog)
+                    await self.load_extension(cog)
                     print(f"Loaded cog cogs.{filename[:-3]}")
             except Exception as e:
                 exc = "{}: {}".format(type(e).__name__, e)
                 print("Failed to load cog {}\n{}".format(cog, exc))
         try:
             cog = "jishaku"
-            self.load_extension("jishaku")
+            await self.load_extension("jishaku")
             print("Loaded cog jishaku")
         except Exception as e:
             exc = "{}: {}".format(type(e).__name__, e)
@@ -146,5 +146,4 @@ async def mainprocess():
 
 
 if __name__ == '__main__':
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(mainprocess())
+    asyncio.run(mainprocess())
