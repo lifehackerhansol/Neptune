@@ -3,8 +3,6 @@ name: Flake8 Check
 on:
   pull_request:
     branches: [ main ]
-  push:
-    branches: [ main ]
 
 jobs:
   build:
