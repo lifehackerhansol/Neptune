@@ -140,7 +140,7 @@ async def mainprocess():
     bot = Neptune([x for x in configuration['PREFIX']])
     bot.help_command = commands.DefaultHelpCommand()
     print('Starting Neptune...')
-    bot.load_cogs()
+    await bot.load_cogs()
     await bot.start(configuration['TOKEN'])
     await Tortoise.close_connections()
 
